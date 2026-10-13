@@ -4,16 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WELCOME TO MY WEBSITE! | afterhours-games</title>
-    <meta name="description" content="Official web portal for afterhours-games — independent game development, 2D arcade games, and puzzle mechanics.">
-    <meta name="theme-color" content="#0b0f19">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = {
+        tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -38,8 +32,6 @@
             }
         }
     </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background-color: #0b0f19;
@@ -47,23 +39,6 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        .nav-btn:focus-visible,
-        .glass-card:focus-visible,
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid rgba(99, 102, 241, 0.9);
-            outline-offset: 3px;
         }
 
         /* Ambient background glow effects */
@@ -151,187 +126,184 @@
     </style>
 </head>
 <body class="relative flex flex-col items-center min-h-screen px-4 sm:px-6 lg:px-8 py-6">
-    <a href="#main" class="sr-only focus:not-sr-only absolute left-4 top-4 z-50 bg-slate-800 text-white px-3 py-2 rounded-md">Skip to content</a>
 
-    <div class="ambient-glow-1" aria-hidden="true"></div>
-    <div class="ambient-glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
 
     <!-- MAIN CONTAINER -->
     <div class="w-full max-w-4xl z-10 flex flex-col min-h-screen justify-between">
         <div>
-            <nav class="flex flex-col sm:flex-row justify-between items-center py-4 mb-10 border-b border-white/10 gap-4" role="navigation" aria-label="Main navigation">
+            <nav class="flex flex-col sm:flex-row justify-between items-center py-4 mb-10 border-b border-white/10 gap-4">
                 <a href="#home" onclick="switchPage('home', event)" class="text-xl font-extrabold tracking-tight text-slate-100 hover:opacity-90 transition">
                     afterhours<span class="text-indigo-500">-games</span>
                 </a>
 
-                <div class="flex items-center gap-1 sm:gap-2 flex-wrap justify-center bg-slate-900/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md" role="tablist" aria-label="Website sections">
-                    <button type="button" class="nav-btn active px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-home" onclick="switchPage('home', event)" aria-current="page">Home</button>
-                    <button type="button" class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-games" onclick="switchPage('games', event)">Games</button>
-                    <button type="button" class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-developer" onclick="switchPage('developer', event)">Developer Studio</button>
-                    <button type="button" class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-about" onclick="switchPage('about', event)">About Me</button>
+                <div class="flex items-center gap-1 sm:gap-2 flex-wrap justify-center bg-slate-900/60 p-1.5 rounded-xl border border-white/5 backdrop-blur-md">
+                    <button class="nav-btn active px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-home" onclick="switchPage('home', event)">Home</button>
+                    <button class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-games" onclick="switchPage('games', event)">Games</button>
+                    <button class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-developer" onclick="switchPage('developer', event)">Developer Studio</button>
+                    <button class="nav-btn px-3.5 py-1.5 text-sm font-medium rounded-lg text-slate-400 hover:text-slate-100" id="btn-about" onclick="switchPage('about', event)">About Me</button>
                 </div>
             </nav>
 
-            <main id="main" role="main">
-                <!-- ================= PAGE 1: HOME PAGE ================= -->
-                <div id="home" class="page active space-y-8">
-                    <header class="text-center space-y-3 py-4">
-                        <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight uppercase">WELCOME TO MY WEBSITE!</h1>
-                        <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                            Official web portal for independent game development, 2D arcade games, and puzzle mechanics.
-                        </p>
-                    </header>
+            <!-- ================= PAGE 1: HOME PAGE ================= -->
+            <div id="home" class="page active space-y-8">
+                <header class="text-center space-y-3 py-4">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight uppercase">WELCOME TO MY WEBSITE!</h1>
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        Official web portal for independent game development, 2D arcade games, and puzzle mechanics.
+                    </p>
+                </header>
 
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
-                        <div class="flex items-center justify-between border-b border-white/5 pb-4">
-                            <h2 class="text-xl font-bold text-slate-100">Featured Game Release</h2>
-                            <span class="text-xs text-indigo-400 font-mono bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20">RELEASE v0.1.0</span>
+                <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                        <h2 class="text-xl font-bold text-slate-100">Featured Game Release</h2>
+                        <span class="text-xs text-indigo-400 font-mono bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20">RELEASE v0.1.0</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Check out <strong class="text-slate-100">August Hour! (Sokoban)</strong> — a classic 2D puzzle mini game built with GDevelop for both Android and PC. Push boxes into position across clean, challenge-focused puzzle levels!
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="switchPage('games', null, 'btn-games')" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] transition shadow-lg shadow-indigo-600/25">
+                            Explore Games Catalog
+                        </button>
+                        <a href="https://gamejolt.com/games/1244/1106222" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 active:scale-[0.98] transition">
+                            View on Game Jolt
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PAGE 2: GAMES PAGE ================= -->
+            <div id="games" class="page space-y-8">
+                <header class="text-center space-y-2 py-2">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Game Catalog</h1>
+                    <p class="text-slate-400 text-sm sm:text-base">Independent titles and interactive experiences.</p>
+                </header>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-100">August Hour! (Sokoban)</h2>
+                            <span class="text-xs font-semibold text-emerald-400">Status: Active Development (Release 0.1.0)</span>
                         </div>
-                        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                            Check out <strong class="text-slate-100">August Hour! (Sokoban)</strong> — a classic 2D puzzle mini game built with GDevelop for both Android and PC. Push boxes into position across clean, challenge-focused puzzle levels!
-                        </p>
-                        <div class="flex flex-wrap gap-3 pt-2">
-                            <button type="button" onclick="switchPage('games', null, 'btn-games')" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] transition shadow-lg shadow-indigo-600/25">
-                                Explore Games Catalog
-                            </button>
-                            <a href="https://gamejolt.com/games/1244/1106222" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 active:scale-[0.98] transition">
-                                View on Game Jolt
-                            </a>
+                        <span class="inline-block w-fit text-xs text-slate-300 bg-indigo-500/20 px-3 py-1 rounded-full border border-indigo-500/30 font-medium">
+                            Android (APK) / PC (EXE)
+                        </span>
+                    </div>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        A 2D puzzle arcade mini game based on classic Sokoban mechanics built with GDevelop for both Android and PC. Players test their logic and spatial reasoning by strategically maneuvering blocks into target locations within compact environments.
+                    </p>
+
+                    <div class="bg-slate-900/50 rounded-xl p-4 border border-white/5 space-y-2 text-sm">
+                        <h3 class="text-xs uppercase tracking-wider font-bold text-indigo-400">Project Specifications</h3>
+                        <ul class="divide-y divide-white/5">
+                            <li class="py-2 flex justify-between flex-wrap gap-2">
+                                <span class="text-slate-400">Genre</span>
+                                <span class="text-slate-200 font-medium">Arcade / Puzzle (Sokoban)</span>
+                            </li>
+                            <li class="py-2 flex justify-between flex-wrap gap-2">
+                                <span class="text-slate-400">Platform</span>
+                                <span class="text-slate-200 font-medium">Android (APK) / PC (EXE)</span>
+                            </li>
+                            <li class="py-2 flex justify-between flex-wrap gap-2">
+                                <span class="text-slate-400">Key Features</span>
+                                <span class="text-slate-200 font-medium text-right">Classic Sokoban Mechanics, 2D Pixel / Arcade Style, GDevelop Engine, Mobile APK & PC Executable</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://gamejolt.com/games/1244/1106222" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] transition shadow-lg shadow-indigo-600/25">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                            View on Game Jolt
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PAGE 3: DEVELOPER PAGE ================= -->
+            <div id="developer" class="page space-y-8">
+                <header class="text-center space-y-2 py-2">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Developer Studio</h1>
+                    <p class="text-slate-400 text-sm sm:text-base">Workflows, design architecture, and tools.</p>
+                </header>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div class="border-b border-white/5 pb-4">
+                        <h2 class="text-2xl font-bold text-slate-100">Development Pipeline</h2>
+                        <p class="text-xs text-slate-400 mt-1">GDevelop Engine & 2D Arcade Logic</p>
+                    </div>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        The core development pipeline focuses on responsive 2D mechanics, clean puzzle design, and cross-platform export efficiency using GDevelop. Every project aims for smooth controls, light installation footprint, and immediate pick-up-and-play accessibility.
+                    </p>
+
+                    <div class="bg-slate-900/50 rounded-xl p-4 border border-white/5 space-y-2 text-sm">
+                        <h3 class="text-xs uppercase tracking-wider font-bold text-indigo-400">Studio Focus & Stack</h3>
+                        <ul class="divide-y divide-white/5">
+                            <li class="py-2 flex justify-between">
+                                <span class="text-slate-400">Core Engine</span>
+                                <span class="text-slate-200 font-medium">GDevelop 2D Engine</span>
+                            </li>
+                            <li class="py-2 flex justify-between">
+                                <span class="text-slate-400">Primary Focus</span>
+                                <span class="text-slate-200 font-medium">2D Puzzle & Arcade Mini Games</span>
+                            </li>
+                            <li class="py-2 flex justify-between">
+                                <span class="text-slate-400">Target Platforms</span>
+                                <span class="text-slate-200 font-medium">Android (Mobile APK) & PC Executables</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://gamejolt.com/@afterhours-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 active:scale-[0.98] transition">
+                            Visit Game Jolt Developer Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PAGE 4: ABOUT ME PAGE ================= -->
+            <div id="about" class="page space-y-8">
+                <header class="text-center space-y-2 py-2">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">About Me</h1>
+                    <p class="text-slate-400 text-sm sm:text-base">Behind the alias and creative vision.</p>
+                </header>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                    <div class="flex items-center gap-4 border-b border-white/5 pb-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-xl">
+                            ag
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-100">afterhours-dev</h2>
+                            <p class="text-xs text-indigo-400 font-mono">Solo Indie Game Developer</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        I am a solo indie game developer focused on creating engaging 2D puzzle and arcade mini games. With projects like <strong>August Hour! (Sokoban)</strong>, my goal is to deliver clean, addictive gameplay mechanics accessible on both mobile and desktop platforms.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5 space-y-1">
+                            <h3 class="text-slate-200 font-semibold text-sm">Puzzle & Arcade Mechanics</h3>
+                            <p class="text-xs text-slate-400">Designing rewarding Sokoban logic, block-pushing puzzles, and retro arcade systems.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5 space-y-1">
+                            <h3 class="text-slate-200 font-semibold text-sm">Cross-Platform Deployment</h3>
+                            <p class="text-xs text-slate-400">Building seamlessly across Android APKs and PC standalone builds via GDevelop.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- ================= PAGE 2: GAMES PAGE ================= -->
-                <div id="games" class="page space-y-8">
-                    <header class="text-center space-y-2 py-2">
-                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Game Catalog</h1>
-                        <p class="text-slate-400 text-sm sm:text-base">Independent titles and interactive experiences.</p>
-                    </header>
-
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-4">
-                            <div>
-                                <h2 class="text-2xl font-bold text-slate-100">August Hour! (Sokoban)</h2>
-                                <span class="text-xs font-semibold text-emerald-400">Status: Active Development (Release 0.1.0)</span>
-                            </div>
-                            <span class="inline-block w-fit text-xs text-slate-300 bg-indigo-500/20 px-3 py-1 rounded-full border border-indigo-500/30 font-medium">
-                                Android (APK) / PC (EXE)
-                            </span>
-                        </div>
-
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            A 2D puzzle arcade mini game based on classic Sokoban mechanics built with GDevelop for both Android and PC. Players test their logic and spatial reasoning by strategically maneuvering blocks into target locations within compact environments.
-                        </p>
-
-                        <div class="bg-slate-900/50 rounded-xl p-4 border border-white/5 space-y-2 text-sm">
-                            <h3 class="text-xs uppercase tracking-wider font-bold text-indigo-400">Project Specifications</h3>
-                            <ul class="divide-y divide-white/5">
-                                <li class="py-2 flex justify-between flex-wrap gap-2">
-                                    <span class="text-slate-400">Genre</span>
-                                    <span class="text-slate-200 font-medium">Arcade / Puzzle (Sokoban)</span>
-                                </li>
-                                <li class="py-2 flex justify-between flex-wrap gap-2">
-                                    <span class="text-slate-400">Platform</span>
-                                    <span class="text-slate-200 font-medium">Android (APK) / PC (EXE)</span>
-                                </li>
-                                <li class="py-2 flex justify-between flex-wrap gap-2">
-                                    <span class="text-slate-400">Key Features</span>
-                                    <span class="text-slate-200 font-medium text-right">Classic Sokoban Mechanics, 2D Pixel / Arcade Style, GDevelop Engine, Mobile APK & PC Executable</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="pt-2">
-                            <a href="https://gamejolt.com/games/1244/1106222" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] transition shadow-lg shadow-indigo-600/25">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-                                View on Game Jolt
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================= PAGE 3: DEVELOPER PAGE ================= -->
-                <div id="developer" class="page space-y-8">
-                    <header class="text-center space-y-2 py-2">
-                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Developer Studio</h1>
-                        <p class="text-slate-400 text-sm sm:text-base">Workflows, design architecture, and tools.</p>
-                    </header>
-
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-                        <div class="border-b border-white/5 pb-4">
-                            <h2 class="text-2xl font-bold text-slate-100">Development Pipeline</h2>
-                            <p class="text-xs text-slate-400 mt-1">GDevelop Engine & 2D Arcade Logic</p>
-                        </div>
-
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            The core development pipeline focuses on responsive 2D mechanics, clean puzzle design, and cross-platform export efficiency using GDevelop. Every project aims for smooth controls, light installation footprint, and immediate pick-up-and-play accessibility.
-                        </p>
-
-                        <div class="bg-slate-900/50 rounded-xl p-4 border border-white/5 space-y-2 text-sm">
-                            <h3 class="text-xs uppercase tracking-wider font-bold text-indigo-400">Studio Focus & Stack</h3>
-                            <ul class="divide-y divide-white/5">
-                                <li class="py-2 flex justify-between">
-                                    <span class="text-slate-400">Core Engine</span>
-                                    <span class="text-slate-200 font-medium">GDevelop 2D Engine</span>
-                                </li>
-                                <li class="py-2 flex justify-between">
-                                    <span class="text-slate-400">Primary Focus</span>
-                                    <span class="text-slate-200 font-medium">2D Puzzle & Arcade Mini Games</span>
-                                </li>
-                                <li class="py-2 flex justify-between">
-                                    <span class="text-slate-400">Target Platforms</span>
-                                    <span class="text-slate-200 font-medium">Android (Mobile APK) & PC Executables</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="pt-2">
-                            <a href="https://gamejolt.com/@afterhours-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 active:scale-[0.98] transition">
-                                Visit Game Jolt Developer Profile
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================= PAGE 4: ABOUT ME PAGE ================= -->
-                <div id="about" class="page space-y-8">
-                    <header class="text-center space-y-2 py-2">
-                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100">About Me</h1>
-                        <p class="text-slate-400 text-sm sm:text-base">Behind the alias and creative vision.</p>
-                    </header>
-
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-                        <div class="flex items-center gap-4 border-b border-white/5 pb-4">
-                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-xl">
-                                ag
-                            </div>
-                            <div>
-                                <h2 class="text-2xl font-bold text-slate-100">afterhours-dev</h2>
-                                <p class="text-xs text-indigo-400 font-mono">Solo Indie Game Developer</p>
-                            </div>
-                        </div>
-
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            I am a solo indie game developer focused on creating engaging 2D puzzle and arcade mini games. With projects like <strong>August Hour! (Sokoban)</strong>, my goal is to deliver clean, addictive gameplay mechanics accessible on both mobile and desktop platforms.
-                        </p>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5 space-y-1">
-                                <h3 class="text-slate-200 font-semibold text-sm">Puzzle & Arcade Mechanics</h3>
-                                <p class="text-xs text-slate-400">Designing rewarding Sokoban logic, block-pushing puzzles, and retro arcade systems.</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/40 border border-white/5 space-y-1">
-                                <h3 class="text-slate-200 font-semibold text-sm">Cross-Platform Deployment</h3>
-                                <p class="text-xs text-slate-400">Building seamlessly across Android APKs and PC standalone builds via GDevelop.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
+            </div>
         </div>
 
         <!-- GLOBAL FOOTER -->
-        <footer class="text-center py-8 text-xs text-slate-500 border-t border-white/5 mt-12" role="contentinfo">
+        <footer class="text-center py-8 text-xs text-slate-500 border-t border-white/5 mt-12">
             <p>&copy; 2026 afterhours-games. All rights reserved.</p>
         </footer>
     </div>
@@ -348,10 +320,7 @@
 
             // Deactivate navigation tabs
             const navButtons = document.querySelectorAll('.nav-btn');
-            navButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.removeAttribute('aria-current');
-            });
+            navButtons.forEach(btn => btn.classList.remove('active'));
 
             // Show target page
             const targetPage = document.getElementById(pageId);
@@ -360,16 +329,13 @@
             }
 
             // Set active class on navbar button
-            let targetBtn = null;
             if (event && event.target && event.target.classList.contains('nav-btn')) {
-                targetBtn = event.target;
+                event.target.classList.add('active');
             } else {
-                targetBtn = document.getElementById(buttonId || `btn-${pageId}`);
-            }
-
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-                targetBtn.setAttribute('aria-current', 'page');
+                const targetBtn = document.getElementById(buttonId || `btn-${pageId}`);
+                if (targetBtn) {
+                    targetBtn.classList.add('active');
+                }
             }
 
             // Smooth scroll to top
